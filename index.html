@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RxJS Playground</title>
+    <style>
+      #draggable {
+        cursor: move;
+        background-color: red;
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        z-index: 1;
+      }
+
+      #dropable {
+        cursor: paste;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        right: 10px;
+        color: black;
+        z-index: 0;
+      }
+
+      .stopwatch {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
+      .stopwatch div {
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="display: flex">
+      <img
+        style="width: 20px; height: 20px"
+        src="https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png"
+        class="logo"
+      />
+      <span>RxJs</span>
+    </div>
+    <div class="container">
+      <div class="row" style="background-color: #ff6e6e; padding: 0 20px">
+        <div class="col-xs-4 col-xs-offset-4">
+          <div class="text-center">
+            <h4>Stopwatch</h1>
+            <div style="" class="stopwatch">
+              <div>
+                <button id="start-button" class="btn btn-success">Start</button>
+                <p class="startcounter">0</p>
+              </div>
+              <div>
+                <button id="stop-button" class="btn btn-success">Stop</button>
+                <p class="stopcounter">0</p>
+              </div>
+              <div>
+                <button id="lap-button" class="btn btn-success">Lap</button>
+                <p class="lapcounter">0</p>
+              </div>
+              <h2 class="stopwatch-output">0.0s</h2>
+            </div>
+
+            <!-- <h2 class="range1-output">0</h2> -->
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="row"
+        style="height: 200px; padding: 20px; background-color: #ffad6e"
+      >
+        <div id="draggable">Click & Drag Me!</div>
+        <div id="dropable">Drop Here!</div>
+      </div>
+
+      <div
+        class="row"
+        style="background-color: #ffc86e; padding: 20px; color: black"
+      >
+        <h4>PigLatin Translator</h1>
+        <label>enter english words :</label>
+        <input id="englishInput" value="" />
+        <div>output1 : <span id="pigLatin1"></span></div>
+        <div>output2 : <span id="pigLatin2"></span></div>
+      </div>
+    </div>
+  </body>
+</html>
