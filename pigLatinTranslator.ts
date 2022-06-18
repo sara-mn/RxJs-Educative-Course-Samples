@@ -1,4 +1,4 @@
-import { fromEvent, map, mergeMap, from, reduce } from 'rxjs';
+import { fromEvent, map, mergeMap, from, reduce, tap } from 'rxjs';
 
 let englishWordsTextBox = document.querySelector('#englishInput');
 let pigLatin1 = document.getElementById('pigLatin1');
@@ -12,7 +12,10 @@ englishWordsTextBox$
     map((words) => words.split(/\s+/)),
     map((wordArray: string[]) => wordArray.map((e) => pigLatinify(e)))
   )
-  .subscribe((words) => (pigLatin1.innerText = words.join(' ')));
+  .subscribe((words) => {
+    pigLatin1.innerText = words.join(' ');
+    //console.log(words);
+  });
 
 englishWordsTextBox$
   .pipe(
@@ -20,12 +23,16 @@ englishWordsTextBox$
     mergeMap((wordString) =>
       // Inner observable
       from(wordString.split(/\s+/)).pipe(
-        map(pigLatinify),
-        reduce((bigString, newWord) => bigString + ' ' + newWord, '')
+        tap(console.log),
+        map(pigLatinify)
+        //reduce((bigString, newWord) => bigString + ' ' + newWord, '')
       )
     )
   )
-  .subscribe((translatedWords) => (pigLatin2.innerText = translatedWords));
+  .subscribe((translatedWords) => {
+    pigLatin2.innerText = translatedWords;
+    // console.log(translatedWords);
+  });
 
 function pigLatinify(word: string) {
   // Handle single-letter case and empty strings

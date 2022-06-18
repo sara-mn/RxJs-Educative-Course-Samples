@@ -70,7 +70,7 @@ startClick$
     )
   )
   .subscribe((num) => {
-    console.log(num + 's');
+    //console.log(num + 's');
     // if(!isLap){
     //   stopwatchResults.innerText = num + 's'
     // }
@@ -86,14 +86,14 @@ lapClick$.subscribe(() => {
 // });
 
 startClick$.subscribe((e) => {
-  console.log('increase count start click');
+  //console.log('increase count start click');
   let num = parseInt(text1.innerHTML) + 1;
   let strVar = num.toString();
   text1.innerHTML = strVar;
 });
 
 stopClick$.subscribe((e) => {
-  console.log('increase count stop click');
+  //console.log('increase count stop click');
   let num = parseInt(text2.innerHTML) + 1;
   let strVar = num.toString();
   text2.innerHTML = strVar;
