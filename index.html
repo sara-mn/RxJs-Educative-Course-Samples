@@ -35,6 +35,25 @@
       .stopwatch div {
         padding: 20px;
       }
+
+      #loading-box{
+        /* margin: 0 auto; */
+        height:10px;
+        width:200px;
+        background-color:#fff;
+        border:1px solid #ccc;
+        margin-top: 10px;
+        position:relative;
+      }
+
+      #loading-bar{
+        position:absolute;
+        left :0;
+        top:0 ;
+        bottom: -1px;
+        /* width:5px; */
+        background-color:lightblue;
+      }
     </style>
   </head>
 
@@ -94,12 +113,37 @@
 
       <div
         class="row"
-        style="background-color: #ffc86e; padding: 20px; color: black"
+        style="background-color: #ffe26e; padding: 20px; color: black"
       >
         <h4>Typeahead</h1>
         <label>enter word :</label>
         <input id="typeaheadTextBox" value="" />
         <div id="typeahead-container">sdsad</div>
+      </div>
+
+      <div
+        class="row"
+        style="background-color: #fffd6e; padding: 20px; color: black"
+      >
+        <h4>Ajax And ErrorHandling</h1>
+        <button id="ajax-button" class="btn btn-success">Ajax Request</button>
+
+      </div>
+
+      <div class="row" style="background-color: #fffd6e; padding: 20px; color: black;display:none">
+        <div class="col-xs-6 col-xs-offset-3">
+          <div class="text-center">
+            <canvas></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="background-color: #e1ff6e; padding: 20px; color: black;">
+        <h4>ProgressBar</h1>
+        <div id="loading-box">
+          <div id='loading-bar'></div> 
+          <div id='ajax-error'></div>
+        </div>
       </div>
     </div>
   </body>

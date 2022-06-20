@@ -2,6 +2,8 @@ import './style.css';
 import './dragDrop.ts';
 import './stopwatch.ts';
 import './pigLatinTranslator.ts';
+import './ajaxAndErrorHandling.ts';
+import './progressBar.ts';
 
 import { interval, of, merge, from, fromEvent } from 'rxjs';
 import {
