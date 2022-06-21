@@ -11,7 +11,7 @@ import {
   take,
   filter,
   delay,
-  tap,
+  tap, 
   mergeMap,
   reduce,
 } from 'rxjs/operators';
