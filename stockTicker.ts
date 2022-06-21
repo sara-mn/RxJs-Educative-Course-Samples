@@ -1,5 +1,4 @@
-declare var Chart;
-
+import { Chart } from 'chart.js';
 import { merge, fromEvent, of, combineLatest } from 'rxjs';
 import { scan, map } from 'rxjs/operators';
 import { webSocket } from 'rxjs/webSocket';
@@ -50,7 +49,9 @@ let colorMap = {
   JKL: 'rgb(153, 102, 255)',
 };
 
-let ctx = document.querySelector('canvas').getContext('2d');
+let ctx = document
+  .querySelector<HTMLCanvasElement>('#my-chart')
+  .getContext('2d');
 let stockChart = new Chart(ctx, config);
 
 let abcEl = <HTMLElement>document.querySelector('.abc');
