@@ -4,6 +4,7 @@ import './stopwatch.ts';
 import './pigLatinTranslator.ts';
 import './ajaxAndErrorHandling.ts';
 import './progressBar.ts';
+import './stockTicker.ts';
 
 import { interval, of, merge, from, fromEvent } from 'rxjs';
 import {
@@ -11,7 +12,7 @@ import {
   take,
   filter,
   delay,
-  tap, 
+  tap,
   mergeMap,
   reduce,
 } from 'rxjs/operators';
