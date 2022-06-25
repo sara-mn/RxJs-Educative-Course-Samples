@@ -52,7 +52,13 @@ let colorMap = {
 let ctx = document
   .querySelector<HTMLCanvasElement>('#my-chart')
   .getContext('2d');
-let stockChart = new Chart(ctx, config);
+let stockChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    datasets: [],
+  },
+});
 
 let abcEl = <HTMLElement>document.querySelector('.abc');
 let defEl = <HTMLElement>document.querySelector('.def');
@@ -102,7 +108,7 @@ function makeCheckboxStream(checkboxEl, stockName) {
     // Start off checked
     of({ target: { checked: true } })
   ).pipe(
-    map((e) => e.target.checked),
+    map((e: MouseEvent) => e.target['checked']),
     map((isEnabled) => ({
       isEnabled,
       stock: stockName,
